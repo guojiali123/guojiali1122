@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=1080" />
+		<script src="jquery-3.1.1.js"></script>
+		<script src="mobile-util.js"></script>
+		<link href="css/reset.css" type="text/css" rel="stylesheet">
+		<link href="css/index.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="wrap">
+			<header class="clearfix">
+				<img src="images/1.jpg">
+				<span>Notifications</span>
+				<img src="images/2.jpg">
+			</header>
+			<nav>
+				<ul>
+					<li>Frides</li>
+					<li>Follwing</li>
+					<li>Staff</li>
+				</ul>
+			</nav>
+			<aside>
+				<ul>
+					<li>
+						<img src="images/3.jpg" class="bang">
+					    <div class="zhong"></div>
+					    <img src="images/4.jpg" class="bangh">
+					</li>
+					<li><img src="images/5.jpg" class="bang">
+					    <div class="zhong"></div>
+					    <img src="images/14.jpg" class="bangh da">
+					</li>
+					<li><img src="images/7.jpg" class="bang">
+					    <div class="zhong"></div>
+					    <img src="images/8.jpg" class="bangh">
+					</li>
+					<li><img src="images/9.jpg" class="bang">
+					    <div class="zhong"></div>
+					    <img src="images/10.jpg" class="bangh">
+					</li>
+					<li><img src="images/11.jpg" class="bang">
+					    <div class="zhong"></div>
+					    <img src="images/12.jpg" class="bangh">
+					</li>
+					<li><img src="images/13.jpg" class="bang">
+					    <div class="zhong"></div>
+					    <img src="images/6.jpg" class="bangh da">
+					</li>
+				</ul>
+			</aside>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url:"json.json",
+				type:"GET",				
+				success:function(e){
+					console.log(e)
+					for(var i in e){
+						$('.zhong').eq(i).html('<h5>'+e[i].te+'</h5><p>'+e[i].tex+'</p>')
+					}
+//						console.log(e[i].te)
+				}
+			});
+		})
+	</script>
